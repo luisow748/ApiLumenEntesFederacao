@@ -19,8 +19,9 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix' => 'api'], function () use ($router) {
 
     $router->get('estados', 'EstadoController@index');
-    $router->get('estados/{id}', 'EstadoController@show');
-    $router->get('estados/{Uf}/municipios', 
+    $router->get('estados/{id}', 
+        'EstadoController@show');
+    $router->get('estados/{id}/municipios', 
          'MunicipioController@retornaMunicipiosDoEstado');
     
 });

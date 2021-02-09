@@ -40,8 +40,9 @@ class MunicipioController extends Controller
     public function retornaMunicipiosDoEstado(int $id)
     {
         $estado = Estado::find($id);
-        return response()->json(
-            $this->classe::where('Uf', $estado->Uf)->get());
+        
+         return response()->json(
+             $this->classe::where('Uf', $estado->Uf)->get());
     }
 
     public function update(int $id, Request $request)
